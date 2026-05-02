@@ -29,25 +29,40 @@ export default Home
 //     )
 // }
 
+//   const [count,setCount] = useState(0)
 
-
-import { useState } from 'react'
+//   const incCount = () => {
+//     // setCount (count + 1);
+//     // setCount (count + 1);
+//     // setCount (count + 1); 
+//     setCount ((prevcount) => prevcount + 1);
+//     setCount ((prevcount) => prevcount + 1);
+//     setCount ((prevcount) => prevcount + 1);
+//   }
+// const showOrHide = () => {
+//    button.onClick =hide == true ? "Show" : "Hide"
+//     setCount (hide == true ? false :true)
+//     if (hide == true ){
+//         console.log ("hallo");
+//     }
+//     else{
+//         console.log ("Tchuss");
+//     }
+import { use, useState } from 'react'
 function Home () {
-  const [count,setCount] = useState(0)
 
-  const incCount = () => {
-    // setCount (count + 1);
-    // setCount (count + 1);
-    // setCount (count + 1); 
-    setCount ((prevcount) => prevcount + 1);
-    setCount ((prevcount) => prevcount + 1);
-    setCount ((prevcount) => prevcount + 1);
-  }
-  return (
+const [show,setShow]= useState(false)
+
+return (
         <>
         <h1>useState-Hook</h1>
-        <h3>{count}</h3>
-        <button onClick ={incCount}>Increment</button>
+        {/* <h3>{count}</h3>
+        <button onClick ={incCount}>Increment</button> */}
+        <button onClick = {() => setShow(!show)}  >{show ? "Hide" :"Show"}</button>
+        {show &&<p>Hallo</p>}
         </>
     )
+
 }
+  
+
